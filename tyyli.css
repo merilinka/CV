@@ -1,0 +1,353 @@
+p {
+    color: black;
+}
+
+.libre-baskerville-regular {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.libre-baskerville-bold {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.libre-baskerville-regular-italic {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+html,body {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #57BA98;
+    box-shadow: 
+        inset 5px 5px 10px rgba(0, 0, 0, 0.3), 
+        inset -5px -5px 10px rgba(255, 255, 255, 0.5); 
+
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #3B945E;
+    box-shadow: 
+        inset 2px 2px 5px rgba(0, 0, 0, 0.3),   /* Sisäinen tumma varjo oikealle ja alas */
+        inset -2px -2px 5px rgba(255, 255, 255, 0.5); /* Sisäinen valo ylös ja vasemmalle */
+  }
+  
+  .active {
+    background-color: #3B945E;
+    box-shadow: 
+        inset 2px 2px 5px rgba(0, 0, 0, 0.3),   /* Sisäinen tumma varjo oikealle ja alas */
+        inset -2px -2px 5px rgba(255, 255, 255, 0.5); /* Sisäinen valo ylös ja vasemmalle */
+  }
+
+/* div {
+    border: 1px;
+    border-color:black;
+    border-style:solid;
+    padding: 20px;
+    margin: 0px;
+} */
+
+.container {
+    width: 100%;
+    background-color: #65ccb8;
+    display: flex;
+    flex-direction: row; /* Kuvan ja tekstin asettelu vierekkäin isolla näytöllä */
+    justify-content: flex-start; /* Asetetaan kaikki alkuun, eli kuvan ja tekstin alkamaan vasemmasta reunasta */
+    align-items: center; /* Tämä keskittää kuvan vaakasuunnassa */
+    column-gap: 20px;
+    padding: 20px;
+    box-shadow: 
+        inset 5px 5px 10px rgba(0, 0, 0, 0.3), 
+        inset -5px -5px 10px rgba(255, 255, 255, 0.5); 
+}
+
+.image {
+    flex: 0 0 auto; /* Kuva ei veny, pysyy maksimissaan alkuperäisessä koossa */
+    display: flex;
+    justify-content: flex-start; /* Asettaa kuvan vasemmalle */
+}
+
+.text {
+    flex: 1; /* Tekstit ottavat jäljelle jäävän tilan kuvan vieressä */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* Tekstit alkavat vasemmasta reunasta */
+}
+
+.container img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    padding: 20px;
+}
+
+.container h1 {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    color: white;
+    padding-top: 0px;
+    width: 100%;
+    margin: 0; /* Poistetaan ylimääräinen marginaali */
+}
+
+.container h2 {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
+    text-align: left;
+    color: white;
+    width: 100%;
+    margin: 0; /* Poistetaan ylimääräinen marginaali */
+}
+
+.content {
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.contact {
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Yhteydenottolomakkeen kontti */
+#contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Lomakekenttien ja painikkeiden perusasetukset */
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* Painikkeen tyylittely */
+#contact-form button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 
+        inset 2px 2px 5px rgba(0, 0, 0, 0.3),   /* Sisäinen tumma varjo oikealle ja alas */
+        inset -2px -2px 5px rgba(255, 255, 255, 0.5); /* Sisäinen valo ylös ja vasemmalle */
+}
+
+/* Painikkeen hover-efekti */
+#contact-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Tekstikenttä */
+#contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Kiitosviesti */
+#form-response {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+
+.responsive-two-column-grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.footer {
+    background-color: #57BA98;
+    margin-top: 40px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    box-shadow: 
+        inset 5px 5px 10px rgba(0, 0, 0, 0.3), 
+        inset -5px -5px 10px rgba(255, 255, 255, 0.5);
+}
+
+.footer p{
+    text-align: center;
+}
+
+table {
+    table-layout: auto;
+    width: 100%;
+    text-align: left;
+    padding: 0px;
+}
+
+td {
+    padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px; /* Yleinen fonttikoko pienille näytöille */
+    }
+
+    h1 {
+        font-size: 24px; /* Isot otsikot mobiilille */
+        padding-top: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+        padding-top: 5px;
+    }
+
+    p {
+        font-size: 14px; /* Normaalin tekstin fonttikoko mobiilissa */
+    }
+
+    .container {
+        flex-direction: column; /* Elementit päällekkäin */
+        align-items: center; /* Keskitetään elementit */
+        padding: 10px;
+    }
+
+    .image, .text {
+        flex: unset; /* Poistetaan joustava koko pienillä näytöillä */
+        width: 100%; /* Kummallekin täysleveä tila */
+    }
+
+    .container img {
+        max-width: 50%;
+        height: auto; /* Maksimikoko kuvalle mobiilissa */
+        margin: 0 auto; /* Tämä varmistaa, että kuva on keskitetty */
+    }
+
+    .container h1, .container h2 {
+        text-align: center; /* Keskittää tekstin */
+        padding-top: 20px; /* Vähennetään ylimääräistä tilaa */
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column; /* Mobiilissa lista allekkain */
+    }
+
+    li {
+        width: 100%; /* Varmistetaan, että lista-elementit täyttävät mobiilinäytön */
+    }
+
+    li a {
+        font-size: 16px; /* Tekstilinkkien fonttikoko mobiilissa */
+        padding: 10px; /* Vähemmän tilaa mobiilissa */
+    }
+
+    #contact-form {
+        width: 80%; /* Lomake skaalautuu mobiilin näytölle */
+        padding: 10px;
+    }
+
+    #contact-form input, #contact-form textarea {
+        font-size: 14px; /* Pienennetään kenttien fonttikokoa mobiilissa */
+    }
+
+    #contact-form button {
+        font-size: 16px; /* Säädetään painikkeen koko mobiilissa */
+    }
+
+    table {
+        width: 100%; /* Taulukko täyttää näytön mobiilissa */
+    }
+
+    td, th {
+        font-size: 14px; /* Säädetään tekstin koko taulukoissa */
+        padding: 5px; /* Säädetään tyhjät tilat */
+    }
+}
+
+@media only screen and (min-width:650px) {
+    .content {
+        width: 75%;
+    }
+    .contact {
+        width: 75%;
+    }
+    #contact-form {
+        width: 80%; /* Lomake skaalautuu mobiilin näytölle */
+        padding: 10px;
+    }
+    .responsive-two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+        
+}
+
+
+@media only screen and (min-width:1025px) {
+    li {
+        float: left;
+  }
+    .content {
+        width: 55%;
+    }
+    .contact {
+        width: 55%;
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <title>Tervetuloa CV-sivulleni!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tyyli.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');</style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="image">
+        <img src="image.png" alt="kuva minusta">
+        </div>
+        <div class="text">
+            <h1>Merilin Kaldarova</h1>
+            <h2>Curriculum Vitae</h2>
+        </div>
+    </div> 
+
+    <nav>
+        <ul>
+            <li><a class="active" href="index.html">Etusivu</a></li>
+            <li><a href="koulutus.html">Koulutus</a></li>
+            <li><a href="tyokokemus.html">Työkokemus</a></li>
+            <li><a href="taidot.html">Taidot</a></li>
+            <li><a href="suosittelijat.html">Suosittelijat</a></li>
+          </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Kiitos vierailustasi ja tervetuloa CV-sivulleni!</h1>
+        <p>Tältä sivulta löydät tietoa osaamisestani, työkokemuksestani ja koulutuksestani.</p>
+        <p>Valmistuin vuonna 2023 Haaga-Helian ammattikorkeakoulusta liiketalouden tradenomiksi.</p>
+        <p>Aloitin tänä vuonna uudelleen opinnot Haaga-Helia ammattikorkeakoulussa, tavoitteenani on valmistua IT-tradenomiksi tietojenkäsittelyn koulutusohjelmasta. </p>
+        <p>Sen lisäksi olen suorittanut englannin filologian kandidaatin tutkinnon Tarton Yliopistossa.</p>
+        <p>Ammatiltani olen Credit Controller. Minulla on monipuolinen tausta liiketalouden, kirjanpidon ja laskentatoimen parista. Olen kerryttänyt laajaa työkokemusta muun muassa luotonvalvonnan, taloushallinnon ja asiakaspalvelun tehtävistä.</p> 
+        <p>Työurani aikana olen kehittänyt vahvoja tietoteknisiä taitoja, erityisesti SAPin, Excelin ja myös muiden taloushallinnon järjestelmien käytössä.</p> 
+        <p>Olen myös kielitaitoinen. Äidinkielenä puhun viroa ja sen lisäksi sujuvaa suomea, englantia ja venäjää.</p>
+        <p>Pääset tarkemmin tutustumaan taustaani joko tällä sivulla tai lataamalla ansioluetteloni koneellesi alla näkyvästä linkistä.</p>
+        <p>Kiitos, että käytit aikaa tutustumiseen, ja toivottavasti kuulen sinusta pian!</p>
+        <a href="CV.pdf" target="_blank">Lataa ansioluetteloni (PDF)</a>
+        <p><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="blank">Linkedin</a></p>
+    </div>
+
+    <div class="contact">
+        <h2>Jos haluat keskustella lisää, voit olla yhteydessä joko sähköpostitse tai puhelimitse...</h2> 
+        <p>merilin.kaldarova@myy.haaga-helia.fi</p>               
+        <p>123 - 4567 890</p>
+    </div>
+
+    <div class="contact">
+        <h2>...tai jätä viesti alla olevan lomakkeen kautta.</h2> 
+        <p>Olen sinuun yhteydessä mahdollisimman pian!</p>
+    </div>
+    
+    <form id="contact-form" action="https://formspree.io/f/xjkbnozo" method="POST">
+        <label for="name">Nimi</label>
+        <input type="text" name="name" id="name" required>
+    
+        <label for="email">Sähköposti</label>
+        <input type="email" name="email" id="email" required>
+    
+        <label for="message">Viesti</label>
+        <textarea name="message" id="message" required></textarea>
+    
+        <button type="submit">Lähetä</button>
+        <p id="form-response" style="display:none;">Viestisi on lähetetty!</p>
+    </form>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Estää lomakkeen uudelleenlatauksen
+    
+            // Lähetetään lomake Formspreen avulla
+            fetch('https://formspree.io/f/xjkbnozo', {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    // Näytä kiitosviesti
+                    document.getElementById('form-response').style.display = 'block';
+    
+                    // Tyhjennä lomakkeen kentät
+                    document.getElementById('contact-form').reset();
+                } else {
+                    // Virheilmoitus, jos lomakkeen lähetys epäonnistuu
+                    alert('Failed to send message. Please try again.');
+                }
+            }).catch(function(error) {
+                alert('There was a problem with sending your message.');
+            });
+        });
+    </script>
+    
+    
+    <div class="footer">
+        <p class="copyright">© 2024 Merilin Kaldarova. All rights reserved.</p>
+    </div>
+
+
+
+    
+</body>
+
+
+
+</html>
